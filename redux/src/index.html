@@ -7,9 +7,7 @@
     <script src="./index.js"></script>
     <script>
       const store = window.Store.createStore({
-        counter: {
-          count: 0,
-        },
+        count: 0,
         info: {
           name: "",
           description: "",
@@ -17,19 +15,12 @@
       });
       console.log("11", store.getState());
 
-      store.changeState({
-        ...store.getState(),
-        info: {
-          name: "前端九部",
-          description: "我们都是前端爱好者！",
-        },
+      store.dispatch({
+        type: "INCREMENT",
       });
       console.log("222", store.getState());
-      store.changeState({
-        ...store.getState(),
-        counter: {
-          count: 1,
-        },
+      store.dispatch({
+        type: "INCREMENT",
       });
       console.log("333", store.getState());
     </script>

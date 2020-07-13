@@ -12,7 +12,7 @@ class Store {
   getState() {
     return this.state;
   }
-  plan(state, action) {
+  reducer(state, action) {
     switch (action.type) {
       case "INCREMENT":
         return {
@@ -28,8 +28,8 @@ class Store {
         return state;
     }
   }
-  changeState(action) {
-    this.state = this.plan(this.state, action);
+  dispatch(action) {
+    this.state = this.reducer(this.state, action);
     for (let i = 0; i < this.listeners.length; i++) {
       listeners[i]();
     }
