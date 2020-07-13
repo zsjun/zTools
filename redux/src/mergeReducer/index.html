@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./index.js"></script>
+    <script>
+      function counterReducer(state, action) {
+        switch (action.type) {
+          case "INCREMENT":
+            return {
+              counter: state.counter + 1,
+            };
+          case "DECREMENT":
+            return {
+              ...state,
+              counter: state.counter - 1,
+            };
+          default:
+            return state;
+        }
+      }
+      /*注意：InfoReducer 接收的 state 是 state.info*/
+      function InfoReducer(state, action) {
+        switch (action.type) {
+          case "SET_NAME":
+            return {
+              ...state,
+              name: action.name,
+            };
+          case "SET_DESCRIPTION":
+            return {
+              ...state,
+              description: action.description,
+            };
+          default:
+            return state;
+        }
+      }
+      const reducers = {
+        counter: counterReducer,
+        info: InfoReducer,
+      };
+      const store = window.Store.createStore(reducers, {
+        counter: 0,
+        info: {
+          name: "",
+          description: "",
+        },
+      });
+      console.log("1111", store.getState());
+      /*自增*/
+      store.dispatch({
+        type: "INCREMENT",
+        reducerKey: "counter",
+      });
+
+      /*修改 name*/
+      store.dispatch({
+        type: "SET_NAME",
+        name: "前端九部2号",
+        reducerKey: "info",
+      });
+
+      console.log("222", store.getState());
+    </script>
+  </head>
+  <body></body>
+</html>
