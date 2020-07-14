@@ -24,13 +24,13 @@ class Store {
     return function combine(state = {}, action) {
       if (action.reducerKey === "INIT") {
         for (let i = 0; i < keys.length; i++) {
-          state[keys[i]] = reducers[keys[i]](state, action);
+          state[keys[i]] = reducers[keys[i]]("", action);
         }
       } else {
         const preStateForKey = state[action.reducerKey];
         // 对应的reducerFor key 函数
         const reducerForKey = reducers[action.reducerKey];
-        state = reducerForKey(state, action);
+        state[action.reducerKey] = reducerForKey(preStateForKey, action);
       }
       return state;
     };
