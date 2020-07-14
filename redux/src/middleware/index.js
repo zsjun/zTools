@@ -3,7 +3,6 @@ class Store {
     this.listeners = [];
     this.state = initstate;
     this.reducers = reducers;
-    console.log(11);
   }
   createStore(reducers, initstate, middlewares) {
     if (Array.isArray(middlewares) && middlewares.length > 0) {
