@@ -6,12 +6,15 @@
     <title>Document</title>
     <script src="./src/promise.js"></script>
     <script>
-      const p1 = new Promise((rosolve, reject) => {
-        rosolve();
-      });
-      p1.then((data) => {
-        console.log(1);
-      });
+      // const p1 = new Promise((rosolve, reject) => {
+      //   rosolve();
+      // });
+      new Promise((resolve) => resolve(8))
+        .then()
+        .then()
+        .then(function foo(value) {
+          alert(value);
+        });
     </script>
   </head>
   <body></body>

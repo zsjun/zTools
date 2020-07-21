@@ -9,12 +9,23 @@ function Promise(executor) {
   // 执行exec
 
   function resolve(params) {
-    self.status = "fulfilled";
-    console.log(1);
+    if (self.status === "pending") {
+      self.status = "fulfilled";
+      self.data = params;
+      for (let i = 0; i < self.onResolvedCallback.length; i++) {
+        self.onResolvedCallback[i](value);
+      }
+    }
   }
   function reject(params) {
-    self.status = "rejected";
-    console.log(2);
+    if (self.status === "pending") {
+      self.status = "rejected";
+      self.data = params;
+      for (let i = 0; i < self.onRejectedCallback.length; i++) {
+        self.onRejectedCallback[i](reason);
+      }
+      console.log(2);
+    }
   }
   try {
     executor(resolve, reject);
@@ -22,8 +33,82 @@ function Promise(executor) {
     reject(e);
   }
 }
-Promise.prototype.then = function (params) {
-  console.log(112);
+Promise.prototype.then = function (onFulfilled, onRejected) {
+  if (typeof onFulfilled !== "function")
+    onFulfilled = function (v) {
+      return v;
+    };
+  if (typeof onRejected !== "function")
+    onRejected = function (r) {
+      return r;
+    };
+  let promise2;
+  let self = this;
+  if (self.status === "fulfilled") {
+    try {
+      promise2 = new Promise((resolve, reject) => {
+        let x = onFulfilled(self.data);
+        if (x instanceof Promise) {
+          return x.then(resolve, reject);
+        } else {
+          resolve(x);
+        }
+      });
+    } catch (e) {
+      reject(e);
+    }
+    return promise2;
+  } else if (self.status === "rejected") {
+    promise2 = new Promise(function (resolve, reject) {
+      try {
+        var x = onRejected(self.data);
+        if (x instanceof Promise) {
+          x.then(resolve, reject);
+        }
+      } catch (e) {
+        reject(e);
+      }
+    });
+    return promise2;
+  } else if (self.status === "pending") {
+    promise2 = new Promise(function (resolve, reject) {
+      self.onResolvedCallback.push(function (value) {
+        try {
+          var x = onResolved(self.data);
+          if (x instanceof Promise) {
+            x.then(resolve, reject);
+          }
+        } catch (e) {
+          reject(e);
+        }
+      });
+
+      self.onRejectedCallback.push(function (reason) {
+        try {
+          var x = onRejected(self.data);
+          if (x instanceof Promise) {
+            x.then(resolve, reject);
+          }
+        } catch (e) {
+          reject(e);
+        }
+      });
+    });
+
+    return promise2;
+  }
+};
+Promise.prototype.catch = function (onRejected) {
+  return this.then(null, onRejected);
 };
 
+// module.exports = Promise;
+// Promise.defer = Promise.deferred = function () {
+//   let dfd = {};
+//   dfd.promise = new Promise((resolve, reject) => {
+//     dfd.resolve = resolve;
+//     dfd.reject = reject;
+//   });
+//   return dfd;
+// };
 window.Promise = Promise;
