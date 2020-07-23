@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./index.js"></script>
+    <script>
+      var obj = {
+        a: 1,
+        b: 2,
+        c: {
+          dds: 1,
+        },
+        ds: [1, 2],
+      };
+      const target = deepClone(obj);
+      target.ds.push(3);
+      target.c.dds = 45;
+      console.log(obj);
+      console.log(target);
+    </script>
+  </head>
+  <body></body>
+</html>
