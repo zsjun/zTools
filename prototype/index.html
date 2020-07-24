@@ -27,21 +27,22 @@
         this.sex = sex;
       }
 
-      Son.prototype = extend(Father.prototype);
+      Son.prototype = Object.create(Father.prototype);
       Son.prototype.getSex = function () {
         console.log(this.sex);
       };
-      console.log("11", new Object());
-      console.log("22", new Function());
+      // console.log("11", new Object());
+      // console.log("22", new Function());
 
       const father1 = new Father("11", 223);
-      console.log(father1);
-      // father1.getAge();
-      // father1.addAge(12);
-      // father1.getAge();
+      // const a1 = new Function("a", "b", `return 1`);
+      // console.log(a1);
+      father1.getAge();
+      father1.addAge(12);
+      father1.getAge();
       const son1 = new Son("12", 22, "男");
-      // son1.getAge();
-      // son1.getSex();
+      son1.getAge();
+      son1.getSex();
       console.log(son1);
     </script>
   </head>
