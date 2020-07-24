@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      Function.prototype.myCall = function () {
+        const _params = [...arguments];
+        const that = _params[0] ? _params[0] : window;
+        that.self = this;
+        that.self(..._params.slice(1));
+      };
+      Function.prototype.myApply = function () {
+        const _params = [...arguments];
+        const that = _params[0] ? _params[0] : window;
+        that.self = this;
+        if (_params[1]) {
+          that.self(..._params[1]);
+        } else {
+          that.self();
+        }
+      };
+      Function.prototype.myBind = function () {
+        const _params = [...arguments];
+        const that = _params[0] ? _params[0] : window;
+        that.self = this;
+        return function () {
+          that.self(...arguments);
+        };
+      };
+
+      let Person = {
+        name: "Tom",
+        say(a, b, c, d) {
+          console.log(a + b + c + d);
+          console.log(this);
+          console.log(`我叫${this.name}`);
+        },
+      };
+
+      // 先看代码执行效果
+      // Person.say(); //我叫Tom
+      Person1 = {
+        name: "Tom1",
+      };
+
+      // 我们尝试用原生方法call来实现this指向Person1
+      // Person.say.apply(Person1, [1, 2, 3, 4]); //我叫Tom1
+      Person.say.myBind(Person1)(1, 2, 3, 4);
+    </script>
+  </head>
+  <body></body>
+</html>
