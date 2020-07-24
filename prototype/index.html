@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function extend(prototype) {
+        function Obj() {}
+        // let obj = Object.create(prototype);
+        Obj.prototype = prototype;
+        return new Obj();
+      }
+      function Father(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      Father.prototype.addAge = function (age) {
+        this.age += age;
+      };
+      Father.prototype.getAge = function (age) {
+        console.log(this.age);
+      };
+      function Son(name, age, sex) {
+        Father.call(this, name, age);
+        this.sex = sex;
+      }
+
+      Son.prototype = extend(Father.prototype);
+      Son.prototype.getSex = function () {
+        console.log(this.sex);
+      };
+      console.log("11", new Object());
+      console.log("22", new Function());
+
+      const father1 = new Father("11", 223);
+      console.log(father1);
+      // father1.getAge();
+      // father1.addAge(12);
+      // father1.getAge();
+      const son1 = new Son("12", 22, "男");
+      // son1.getAge();
+      // son1.getSex();
+      console.log(son1);
+    </script>
+  </head>
+  <body></body>
+</html>
