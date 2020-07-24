@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./index.js"></script>
+    <script>
+      const target = {
+        field1: 1,
+        field2: undefined,
+        field3: {
+          child: "child",
+        },
+        field4: "11",
+        field5: [2, 3, 4, 5],
+      };
+      // target.field4 = target;
+      const target1 = deepClone(target);
+      target1.field1 = 1111122344;
+      target1.field2 = 9999;
+      target1.field5.push(9999);
+      console.log(target);
+      console.log(target1);
+    </script>
+  </head>
+  <body></body>
+</html>
