@@ -176,39 +176,3 @@ Promise.deferred = Promise.defer = function () {
   });
   return dfd;
 };
-
-var soon = (function () {
-  var c = [];
-  function b() {
-    while (c.length) {
-      var d = c[0];
-      d.f.apply(d.m, d.a);
-      c.shift();
-    }
-  }
-  var a = (function () {
-    if (typeof MutationObserver !== "undefined") {
-      var d = document.createElement("div");
-      return function (e) {
-        var f = new MutationObserver(function () {
-          f.disconnect();
-          e();
-        });
-        f.observe(d, { attributes: true });
-        d.setAttribute("a", 0);
-      };
-    }
-    if (typeof setImmediate !== "undefined") {
-      return setImmediate;
-    }
-    return function (e) {
-      setTimeout(e, 0);
-    };
-  })();
-  return function (d) {
-    c.push({ f: d, a: [].slice.apply(arguments).splice(1), m: this });
-    if (c.length == 1) {
-      a(b);
-    }
-  };
-})();
