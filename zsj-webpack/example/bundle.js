@@ -9,7 +9,6 @@
       };
       fn(localRequire, module,module.exports);
 
-      console.log("ww", module.exports)
       return module.exports;
     }
     require(0);
