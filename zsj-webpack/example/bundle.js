@@ -2,12 +2,14 @@
     function require(id) {
       const [fn, mapping] = modules[id];
       function localRequire(relativePath) {
-        require(mapping[relativePath]);
+        return require(mapping[relativePath]);
       };
       const module={
         exports: {}
       };
       fn(localRequire, module,module.exports);
+
+      console.log("ww", module.exports)
       return module.exports;
     }
     require(0);
