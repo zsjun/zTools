@@ -1,4 +1,7 @@
-import message from "./message.js";
+import a from "./a.js";
+import b from "./b.js";
+import c from "./c.js";
 
-console.log(111);
-message();
+a();
+b();
+c();
