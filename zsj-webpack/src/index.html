@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      (function (modules) {
+        function require(id) {
+          const [fn, mapping] = modules[id];
+
+          function localRequire(name) {
+            return require(mapping[name]);
+          }
+
+          const module = { exports: {} };
+
+          fn(localRequire, module, module.exports);
+
+          return module.exports;
+        }
+        require(0);
+      })({
+        0: [
+          function (require, module, exports) {
+            "use strict";
+
+            var _message = _interopRequireDefault(require("./message.js"));
+
+            function _interopRequireDefault(obj) {
+              return obj && obj.__esModule ? obj : { default: obj };
+            }
+
+            console.log(111);
+            (0, _message["default"])();
+          },
+          { "./message.js": 1 },
+        ],
+        1: [
+          function (require, module, exports) {
+            "use strict";
+
+            Object.defineProperty(exports, "__esModule", {
+              value: true,
+            });
+            exports["default"] = void 0;
+
+            var _default = function _default() {
+              console.log(999);
+            };
+
+            exports["default"] = _default;
+          },
+          {},
+        ],
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
