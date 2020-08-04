@@ -35,8 +35,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
+var _loadsh = require("loadsh");
+
 var _default = function _default() {
-  console.log("a");
+  var obj = {
+    sdsds: 111
+  };
+  console.log((0, _loadsh.get)(obj, "sdsds"));
 };
 
 exports["default"] = _default;

@@ -1,3 +1,5 @@
+import { get } from "loadsh";
 export default () => {
-  console.log("a");
+  const obj = { sdsds: 111 };
+  console.log(get(obj, "sdsds"));
 };
