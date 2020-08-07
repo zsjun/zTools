@@ -1,4 +1,5 @@
 zsj-webpack/node_modules
 hooks/node_modules
 z-ui/node_modules
+z-ui/.docz
 treeShaking/node_modules
