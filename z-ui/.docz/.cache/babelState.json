@@ -3,16 +3,6 @@
     "develop": {
       "plugins": [
         {
-          "name": "/Users/zsj/work/tools/z-ui/node_modules/gatsby-plugin-mdx/node_modules/@babel/plugin-proposal-object-rest-spread/lib/index.js",
-          "options": {}
-        },
-        {
-          "name": "babel-plugin-export-metadata",
-          "options": {
-            "root": "/Users/zsj/work/tools/z-ui"
-          }
-        },
-        {
           "name": "/Users/zsj/work/tools/z-ui/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
@@ -23,20 +13,32 @@
         {
           "name": "/Users/zsj/work/tools/z-ui/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
           "options": {}
+        },
+        {
+          "name": "/Users/zsj/work/tools/z-ui/node_modules/gatsby-plugin-mdx/node_modules/@babel/plugin-proposal-object-rest-spread/lib/index.js",
+          "options": {}
+        },
+        {
+          "name": "babel-plugin-export-metadata",
+          "options": {
+            "root": "/Users/zsj/work/tools/z-ui"
+          }
         }
       ],
       "presets": [
+        {
+          "name": "/Users/zsj/work/tools/z-ui/node_modules/@babel/preset-typescript/lib/index.js",
+          "options": {
+            "plugins": [],
+            "isTSX": true,
+            "allExtensions": true
+          }
+        },
         {
           "name": "/Users/zsj/work/tools/z-ui/node_modules/@emotion/babel-preset-css-prop/dist/babel-preset-css-prop.cjs.js",
           "options": {
             "sourceMap": true,
             "autoLabel": true,
-            "plugins": []
-          }
-        },
-        {
-          "name": "/Users/zsj/work/tools/z-ui/node_modules/@babel/preset-typescript/lib/index.js",
-          "options": {
             "plugins": []
           }
         }
@@ -49,16 +51,6 @@
     "develop-html": {
       "plugins": [
         {
-          "name": "/Users/zsj/work/tools/z-ui/node_modules/gatsby-plugin-mdx/node_modules/@babel/plugin-proposal-object-rest-spread/lib/index.js",
-          "options": {}
-        },
-        {
-          "name": "babel-plugin-export-metadata",
-          "options": {
-            "root": "/Users/zsj/work/tools/z-ui"
-          }
-        },
-        {
           "name": "/Users/zsj/work/tools/z-ui/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
@@ -69,20 +61,32 @@
         {
           "name": "/Users/zsj/work/tools/z-ui/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
           "options": {}
+        },
+        {
+          "name": "/Users/zsj/work/tools/z-ui/node_modules/gatsby-plugin-mdx/node_modules/@babel/plugin-proposal-object-rest-spread/lib/index.js",
+          "options": {}
+        },
+        {
+          "name": "babel-plugin-export-metadata",
+          "options": {
+            "root": "/Users/zsj/work/tools/z-ui"
+          }
         }
       ],
       "presets": [
+        {
+          "name": "/Users/zsj/work/tools/z-ui/node_modules/@babel/preset-typescript/lib/index.js",
+          "options": {
+            "plugins": [],
+            "isTSX": true,
+            "allExtensions": true
+          }
+        },
         {
           "name": "/Users/zsj/work/tools/z-ui/node_modules/@emotion/babel-preset-css-prop/dist/babel-preset-css-prop.cjs.js",
           "options": {
             "sourceMap": true,
             "autoLabel": true,
-            "plugins": []
-          }
-        },
-        {
-          "name": "/Users/zsj/work/tools/z-ui/node_modules/@babel/preset-typescript/lib/index.js",
-          "options": {
             "plugins": []
           }
         }
@@ -95,16 +99,6 @@
     "build-html": {
       "plugins": [
         {
-          "name": "/Users/zsj/work/tools/z-ui/node_modules/gatsby-plugin-mdx/node_modules/@babel/plugin-proposal-object-rest-spread/lib/index.js",
-          "options": {}
-        },
-        {
-          "name": "babel-plugin-export-metadata",
-          "options": {
-            "root": "/Users/zsj/work/tools/z-ui"
-          }
-        },
-        {
           "name": "/Users/zsj/work/tools/z-ui/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
@@ -115,20 +109,32 @@
         {
           "name": "/Users/zsj/work/tools/z-ui/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
           "options": {}
+        },
+        {
+          "name": "/Users/zsj/work/tools/z-ui/node_modules/gatsby-plugin-mdx/node_modules/@babel/plugin-proposal-object-rest-spread/lib/index.js",
+          "options": {}
+        },
+        {
+          "name": "babel-plugin-export-metadata",
+          "options": {
+            "root": "/Users/zsj/work/tools/z-ui"
+          }
         }
       ],
       "presets": [
+        {
+          "name": "/Users/zsj/work/tools/z-ui/node_modules/@babel/preset-typescript/lib/index.js",
+          "options": {
+            "plugins": [],
+            "isTSX": true,
+            "allExtensions": true
+          }
+        },
         {
           "name": "/Users/zsj/work/tools/z-ui/node_modules/@emotion/babel-preset-css-prop/dist/babel-preset-css-prop.cjs.js",
           "options": {
             "sourceMap": true,
             "autoLabel": true,
-            "plugins": []
-          }
-        },
-        {
-          "name": "/Users/zsj/work/tools/z-ui/node_modules/@babel/preset-typescript/lib/index.js",
-          "options": {
             "plugins": []
           }
         }
@@ -141,16 +147,6 @@
     "build-javascript": {
       "plugins": [
         {
-          "name": "/Users/zsj/work/tools/z-ui/node_modules/gatsby-plugin-mdx/node_modules/@babel/plugin-proposal-object-rest-spread/lib/index.js",
-          "options": {}
-        },
-        {
-          "name": "babel-plugin-export-metadata",
-          "options": {
-            "root": "/Users/zsj/work/tools/z-ui"
-          }
-        },
-        {
           "name": "/Users/zsj/work/tools/z-ui/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
@@ -161,20 +157,32 @@
         {
           "name": "/Users/zsj/work/tools/z-ui/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
           "options": {}
+        },
+        {
+          "name": "/Users/zsj/work/tools/z-ui/node_modules/gatsby-plugin-mdx/node_modules/@babel/plugin-proposal-object-rest-spread/lib/index.js",
+          "options": {}
+        },
+        {
+          "name": "babel-plugin-export-metadata",
+          "options": {
+            "root": "/Users/zsj/work/tools/z-ui"
+          }
         }
       ],
       "presets": [
+        {
+          "name": "/Users/zsj/work/tools/z-ui/node_modules/@babel/preset-typescript/lib/index.js",
+          "options": {
+            "plugins": [],
+            "isTSX": true,
+            "allExtensions": true
+          }
+        },
         {
           "name": "/Users/zsj/work/tools/z-ui/node_modules/@emotion/babel-preset-css-prop/dist/babel-preset-css-prop.cjs.js",
           "options": {
             "sourceMap": true,
             "autoLabel": true,
-            "plugins": []
-          }
-        },
-        {
-          "name": "/Users/zsj/work/tools/z-ui/node_modules/@babel/preset-typescript/lib/index.js",
-          "options": {
             "plugins": []
           }
         }

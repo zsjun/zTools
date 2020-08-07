@@ -19,10 +19,17 @@ const config = {
   pathPrefix: '/',
 
   siteMetadata: {
-    title: 'Z Ui',
+    title: 'z-ui',
     description: 'My awesome app using docz',
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-typescript',
+      options: {
+        isTSX: true,
+        allExtensions: true,
+      },
+    },
     {
       resolve: 'gatsby-theme-docz',
       options: {
@@ -36,7 +43,7 @@ const config = {
         mdPlugins: [],
         hastPlugins: [],
         ignore: [],
-        typescript: false,
+        typescript: true,
         ts: false,
         propsParser: true,
         'props-parser': true,
@@ -50,15 +57,15 @@ const config = {
         base: '/',
         source: './',
         'gatsby-root': null,
-        files: '**/*.{md,markdown,mdx}',
+        files: './components/**/*.{md,markdown,mdx}',
         public: '/public',
-        dest: '.docz/dist',
+        dest: 'doc-site',
         d: '.docz/dist',
         editBranch: 'master',
         eb: 'master',
         'edit-branch': 'master',
         config: '',
-        title: 'Z Ui',
+        title: 'z-ui',
         description: 'My awesome app using docz',
         host: 'localhost',
         port: 3000,
