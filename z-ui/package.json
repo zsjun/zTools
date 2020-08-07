@@ -9,7 +9,8 @@
     "dev": "docz dev",
     "start": "npm run dev",
     "build:doc": "rimraf doc-site && docz build",
-    "preview:doc": "docz serve"
+    "preview:doc": "docz serve",
+    "build:types": "tsc -p tsconfig.build.json && cpr lib esm"
   },
   "lint-staged": {
     "components/**/*.ts?(x)": [
@@ -37,17 +38,26 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
     "@types/react": "^16.9.44",
     "@types/react-dom": "^16.9.8",
+    "@types/vfile-message": "^2.0.0",
     "@umijs/fabric": "^2.2.2",
     "add": "^2.0.6",
     "commitizen": "^4.1.2",
+    "cpr": "^3.0.1",
     "cz-conventional-changelog": "^3.2.0",
     "docz": "^2.3.1",
     "gatsby-plugin-less": "^4.0.3",
     "husky": "^4.2.5",
+    "install": "^0.13.0",
     "less": "^3.12.2",
     "lint-staged": "^10.2.11",
     "prismjs": "^1.21.0",
