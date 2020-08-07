@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "dev": "docz dev",
+    "start": "npm run dev",
+    "build:doc": "rimraf doc-site && docz build",
+    "preview:doc": "docz serve"
   },
   "lint-staged": {
     "components/**/*.ts?(x)": [
@@ -41,7 +45,10 @@
     "add": "^2.0.6",
     "commitizen": "^4.1.2",
     "cz-conventional-changelog": "^3.2.0",
+    "docz": "^2.3.1",
+    "gatsby-plugin-less": "^4.0.3",
     "husky": "^4.2.5",
+    "less": "^3.12.2",
     "lint-staged": "^10.2.11",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -50,6 +57,7 @@
   },
   "dependencies": {
     "prettier": "^2.0.5",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "rimraf": "^3.0.2"
   }
 }
