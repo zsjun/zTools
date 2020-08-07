@@ -1,6 +1,5 @@
-// import React from 'react';
+import React from 'react';
+import Alert from '../alert.tsx';
+import "../style";
 
-// import Alert from 'z-ui/lib/alert';
-// import 'z-ui/lib/alert/style';
-
-// export default () => <Alert kind="warning"></Alert>;
+export default () => <Alert kind="warning">这是一条告警</Alert>;
