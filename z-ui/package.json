@@ -4,15 +4,52 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "git-cz"
+  },
+  "lint-staged": {
+    "components/**/*.ts?(x)": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "components/**/*.less": [
+      "stylelint --syntax less --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@umijs/fabric": "^2.2.2"
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
+    "@types/react": "^16.9.44",
+    "@types/react-dom": "^16.9.8",
+    "@umijs/fabric": "^2.2.2",
+    "add": "^2.0.6",
+    "commitizen": "^4.1.2",
+    "cz-conventional-changelog": "^3.2.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "typescript": "^3.9.7",
+    "yarn": "^1.22.4"
   },
   "dependencies": {
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "prop-types": "^15.7.2"
   }
 }
