@@ -4,8 +4,7 @@ route: /Alert
 menu: 组件
 ---
 
-import { HappyBox } from '../../doc-comps';
-import BasicDemoCode from '!raw-loader!./demo/1-demo-basic.tsx';
+import { Playground } from 'docz'; import Alert from './alert'; // 引入组件 import './style'; // 引入组件样式
 
 # Alert 警告提示
 
@@ -15,9 +14,9 @@ import BasicDemoCode from '!raw-loader!./demo/1-demo-basic.tsx';
 
 ### 基本用法
 
-<HappyBox code={BasicDemoCode} title="基本用法" desc="使用kind控制Alert类型">
- <BasicDemo />
-</HappyBox>
+<Playground>
+  <Alert kind="warning">这是一条警告提示</Alert>
+</Playground>
 
 ## API
 
