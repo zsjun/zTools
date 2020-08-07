@@ -1,11 +1,6 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
-    "paths": {
-      "z-ui": ["./components/index.ts"],
-      "z-ui/esm/*": ["./components/*"],
-      "z-ui/lib/*": ["./components/*"]
-    },
     "target": "esnext",
     "module": "commonjs",
     "jsx": "react",
