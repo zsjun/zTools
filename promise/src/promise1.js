@@ -7,6 +7,7 @@ class Promise {
     this.onResolveCallback = [];
     this.onRejectedCallback = [];
     exec(this.resolve, this.reject);
+    console.log(99);
   }
   resolve(data) {}
   then() {}
