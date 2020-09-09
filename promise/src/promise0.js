@@ -1,7 +1,3 @@
-try {
-  module.exports = Promise;
-} catch (e) {}
-
 function Promise(executor) {
   var self = this;
 
@@ -18,6 +14,7 @@ function Promise(executor) {
       if (self.status === "pending") {
         self.status = "resolved";
         self.data = value;
+        console.log("22", self.onResolvedCallback, self.onResolvedCallback.length);
         for (var i = 0; i < self.onResolvedCallback.length; i++) {
           self.onResolvedCallback[i](value);
         }
@@ -176,3 +173,7 @@ Promise.deferred = Promise.defer = function () {
   });
   return dfd;
 };
+try {
+  module.exports = Promise;
+  // window.Promise = Promise;
+} catch (e) {}
