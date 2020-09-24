@@ -1,0 +1,9 @@
+{
+  "name": "tools",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/zsjun/tools.git",
+  "author": "zsj <zoushijun@threatbook.cn>",
+  "license": "MIT",
+  "dependencies": {}
+}
