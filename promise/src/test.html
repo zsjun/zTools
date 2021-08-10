@@ -4,15 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="./promise0.js"></script>
+    <script src="./promise3.js"></script>
     <script>
-      new window.Promise((resolve) => resolve(8))
-        .then()
-        .then(function add() {
-          alert(9);
+      new window.Promise((resolve,reject) => {
+        setTimeout(() => {
+          resolve("result")
         })
-        .then(function foo(value) {
-          alert(value);
+
+      })
+        .then(function(value) {
+          console.log(value)
+        }).then(()=> {
+          console.log(112)
         });
     </script>
   </head>
